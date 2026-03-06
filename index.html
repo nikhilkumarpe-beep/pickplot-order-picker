@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickPlot Order Picker</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>📦 PickPlot Order Picker</h1>
+            <p>Warehouse Path Optimization Engine</p>
+        </header>
+
+        <main class="main-content">
+            <div class="left-panel card">
+                <h2>Warehouse Configuration</h2>
+
+                <div class="controls">
+                    <button id="btn-load-example" class="btn btn-secondary">Load Random Example</button>
+                    <button id="btn-clear-grid" class="btn btn-outline">Clear Grid</button>
+                </div>
+
+                <div class="input-group">
+                    <label for="json-input">JSON Grid Definition</label>
+                    <textarea id="json-input" spellcheck="false" placeholder="Enter JSON here..."></textarea>
+                    <div id="input-error" class="error-msg hidden">Invalid JSON format</div>
+                </div>
+
+                <button id="btn-find-route" class="btn btn-primary btn-run">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    Find Optimal Route
+                </button>
+
+                <div class="output-group" style="margin-top: 1rem;">
+                    <label for="json-output">Calculation Output</label>
+                    <textarea id="json-output" readonly placeholder="Output JSON will appear here..."></textarea>
+                </div>
+            </div>
+
+            <div class="right-panel card">
+                <div class="grid-header">
+                    <h2>Live Visualization</h2>
+                    <div id="metrics" class="metrics hidden">
+                        <div class="metric-badge">
+                            <span class="metric-label">Time:</span>
+                            <span id="time-val" class="metric-value">0ms</span>
+                        </div>
+                        <div class="metric-badge">
+                            <span class="metric-label">Steps:</span>
+                            <span id="steps-val" class="metric-value">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="color-box start"></div> Start
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box target"></div> Target
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box obstacle"></div> Obstacle
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box path"></div> Path
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box walkable"></div> Walkable
+                    </div>
+                </div>
+
+                <div class="grid-container-wrapper">
+                    <!-- The grid will be generated here -->
+                    <div id="grid-container" class="grid-container"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom Error Modal -->
+    <div id="error-modal" class="modal hidden">
+        <div class="modal-content card">
+            <h2 class="modal-title">⚠️ Path Not Found</h2>
+            <p id="modal-message">There is no path available to reach the target(s).</p>
+            <button id="btn-close-modal" class="btn btn-primary" style="margin-top: 1.5rem;">Acknowledge</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
