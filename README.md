@@ -1,27 +1,24 @@
 # PickPlot Order Picker
 
-A lightweight web application for organizing and managing order-picking workflows through a simple browser-based interface.
+PickPlot is a small web project I made to experiment with a simple order-picking workflow in the browser.
 
-## Overview
-
-PickPlot is a front-end project built with HTML, CSS, and JavaScript. It focuses on turning order information into a cleaner, more usable picking workflow.
+The main focus is keeping the interface straightforward and making the order selection process easier to work with.
 
 ## Features
 
-- Browser-based order management interface
-- Interactive JavaScript functionality
-- Clean and responsive UI
-- Structured HTML layout
-- Custom CSS styling
-- Client-side order and selection handling
+- View and work with orders in the browser
+- Interactive order selection using JavaScript
+- Simple, responsive interface
+- Separate HTML, CSS and JavaScript files
+- No backend or installation needed for the current version
 
-## Tech Stack
+## Built with
 
 - HTML5
 - CSS3
 - JavaScript
 
-## Project Structure
+## Project structure
 
 ```text
 pickplot-order-picker/
@@ -31,32 +28,29 @@ pickplot-order-picker/
 └── README.md
 ```
 
-## Getting Started
+## Running the project
 
-Clone the repository and open `index.html` in a modern web browser.
+Clone the repository:
 
 ```bash
 git clone https://github.com/nikhilkumarpe-beep/pickplot-order-picker.git
 cd pickplot-order-picker
 ```
 
-No backend or package installation is required for the current version.
+Then open `index.html` in your browser.
 
-## What This Project Demonstrates
+## What I worked on here
 
-- Front-end development fundamentals
-- DOM manipulation and JavaScript logic
-- UI structure and responsive styling
-- Organizing a small web application into maintainable files
+This project helped me practice the basics of front-end development, especially working with the DOM, handling user interactions with JavaScript and keeping a small project organised across separate files.
 
-## Future Improvements
+## Possible next steps
 
-- Add persistent storage
-- Add a backend API
-- Add authentication and user roles
-- Add order analytics and dashboards
-- Add automated tests
+- Save orders between sessions
+- Add a backend and database
+- Add login and different user roles
+- Add order statistics and a dashboard
+- Add tests
 
 ## Author
 
-**Nikhil Kumar PE**
+Nikhil Kumar PE
