@@ -1,72 +1,58 @@
 # PickPlot Order Picker
 
-> A browser-based warehouse route visualization tool that demonstrates shortest-path planning with Breadth-First Search (BFS).
+A browser-based warehouse route-planning visualizer that demonstrates **Breadth-First Search (BFS)** for shortest-path navigation through obstacle-based grids.
 
-## Overview
+**Stack:** HTML5 · CSS3 · JavaScript · BFS
 
-PickPlot models a simple warehouse grid containing walkable cells, obstacles, a starting location, and a target location. Users can provide a grid configuration, run the pathfinding algorithm, and watch the selected route being reconstructed and animated in the browser.
+## Why this project
 
-The project was built to combine **algorithmic problem solving** with a practical browser-based visualization.
+PickPlot turns a core data-structures concept into an interactive application. A warehouse is represented as a grid, obstacles restrict movement, and BFS finds and animates the shortest available route from a start position to a target.
 
-## Key Features
+## Features
 
 - Interactive warehouse-style grid visualization
-- Configurable JSON input
+- JSON-based grid configuration
 - Random example scenarios
 - BFS shortest-path routing
 - Obstacle-aware navigation
-- Animated route visualization
+- Animated route reconstruction
 - Step-count and execution-time metrics
 - Input validation and error handling
-- Responsive frontend interface
+- Responsive browser interface
 - No backend or package installation required
 
-## Tech Stack
+## How the algorithm works
 
-| Area | Technology |
-|---|---|
-| Markup | HTML5 |
-| Styling | CSS3 |
-| Programming | JavaScript (ES6+) |
-| Algorithms | Breadth-First Search (BFS) |
-| Browser APIs | DOM APIs |
+1. The grid is treated as an unweighted graph.
+2. Each walkable cell represents a node.
+3. Valid neighbouring cells represent edges.
+4. BFS explores the graph level by level.
+5. Parent references are stored during traversal.
+6. Once the target is reached, the path is reconstructed from the target back to the start.
+7. The reconstructed shortest path is animated in the interface.
 
-## How It Works
+Because every movement has the same cost, BFS returns a shortest path when one exists.
 
-The warehouse grid can be treated as a graph where each walkable cell is a node and valid neighboring cells represent possible movements.
-
-1. The user defines a grid, start point, and target.
-2. The application validates the input.
-3. BFS explores reachable cells level by level using a queue.
-4. Obstacles, visited cells, and invalid positions are skipped.
-5. Parent information is stored while exploring the grid.
-6. Once the target is reached, the parent relationships are used to reconstruct the route.
-7. The resulting route is displayed and animated in the browser.
-
-BFS produces a shortest path when every movement has the same cost.
-
-## Project Structure
+## Project structure
 
 ```text
 pickplot-order-picker/
-├── index.html      # Application structure
-├── script.js       # Grid logic, BFS, validation and visualization
-├── style.css       # Interface styling and responsive layout
-└── README.md       # Project documentation
+├── index.html
+├── script.js
+├── style.css
+└── README.md
 ```
 
-## Run Locally
+## Run locally
 
 ```bash
 git clone https://github.com/nikhilkumarpe-beep/pickplot-order-picker.git
 cd pickplot-order-picker
 ```
 
-Open `index.html` in a modern web browser.
+Open `index.html` in a modern browser. No build step or dependency installation is required.
 
-No server, backend, or dependency installation is required for the current version.
-
-## Example Input
+## Example input
 
 ```json
 {
@@ -82,35 +68,35 @@ No server, backend, or dependency installation is required for the current versi
 
 - `0` = walkable cell
 - `1` = obstacle
-- `start` = route starting coordinate
+- `start` = starting coordinate
 - `target` = destination coordinate
 
-## Engineering Concepts Demonstrated
-
-This project demonstrates practical experience with:
+## Engineering concepts
 
 - Breadth-First Search and graph traversal
-- Queues and visited-state tracking
-- Path reconstruction
+- Queue-based exploration
+- Visited-state tracking
+- Parent-based path reconstruction
 - JavaScript arrays, maps, and control flow
 - DOM manipulation
 - Event-driven browser interactions
-- JSON parsing and input validation
+- JSON parsing and validation
 - Algorithm visualization
-- Separation of HTML, CSS, and JavaScript responsibilities
+- Separation of structure, styling, and behaviour
 
-## Possible Extensions
+## Possible extensions
 
-- Weighted warehouse paths with Dijkstra's algorithm
-- A* pathfinding and algorithm comparison
+- A* and Dijkstra comparison
+- Weighted warehouse paths
 - Multiple orders and destination sequences
 - Route optimization metrics
-- Automated unit and integration tests
+- Automated browser tests
 - Accessibility and keyboard navigation
-- Larger warehouse layouts and performance benchmarking
+- Performance benchmarking on larger grids
 
 ## Author
 
-**Nikhil Kumar PE**
+**Nikhil Kumar PE**  
+Computer Science Engineering · Python · JavaScript · Data Structures & Algorithms
 
-Computer Science Engineering student focused on building practical software projects and strengthening problem-solving skills through implementation.
+[GitHub](https://github.com/nikhilkumarpe-beep)
